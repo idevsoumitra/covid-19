@@ -1,0 +1,43 @@
+#head_sym{
+    font-family: cursive;
+    margin-top: 20px;
+    color: midnightblue;
+    text-shadow: 0 5px 20px  midnightblue;
+    margin-bottom: 10px;
+}
+#sym_p{
+    font-size: 20px;
+    color: navy;
+    text-align: initial;
+    text-transform: capitalize;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.part{
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 7%;
+    /* border: 1px 1px 1px 2px solid salmon; */
+    /* border-right: 1px solid black;
+    border-bottom:1px solid blueviolet;
+    border-left:1px solid blueviolet; */
+    box-shadow: 0px 10px 20px #aaaaaa;
+    
+}
+.part img{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    /* border: 1px solid black; */
+    border-radius: 100px;
+    box-shadow: 0px 10px 20px #aaaaaa;
+}
+    .part h2{
+        margin-top: 15px;
+        font-family: cursive;
+        color: blueviolet;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
