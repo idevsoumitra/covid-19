@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+    <link rel="icon" href="images/covid-logo.png" type="image/png"width="5px" height="2px" >
+
+    <!---Bootstrap link-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!---Header Style-->
+    <link rel="stylesheet" href="style/header_style.css">
+    <!---Footer CSS-->
+    <link rel="stylesheet" href="style/footer_style.css">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style/check_result.css">
+</head>
+<body>
+     <!--Start Header-->
+     <header>
+        <div class="head-div">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="logo-box">
+                      <a href="/">
+                      <img src="images/covid-logo.png" style="width: 150px; height: 80px;">
+                      </a>
+                    </div>
+                </div>  
+                <div class="col-sm-5">
+                    <nav>
+                      <ul id="n_list">
+                          <li><a href="covid-index.html">home</a></li>
+                          <li><a href="">about</a></li>
+                          <li><a href="symptoms.html">Symptoms</a></li>
+                          <li><a href="prevention.html">Prevention</a></li>
+                          <li><a href="">News</a></li>
+                      </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-3" id="e_call">
+                    <a href="#"  >Emergency Call <img src="images/call.png" style="width: 12px; height: 15px;" alt=""></a>
+                </div>
+            </div> <!---END OF DIV ROW-->
+        </div> <!-- END OF DEV HEAD-DIV -->
+    </header>
+    <!----END HEADER-->
+    <!---Main BODY-->
+    <div class="main_container">
+        
+        <div class="col-sm-5" id="body_part1">
+            <h2>Do You need to test COVID-19?</h2>
+            <hr>
+
+            <form action="" id="f" name='fr'>
+                <label for="">Temparture:<p>(Degree Centigrade)</p> </label>
+                <input type="text" name="" class="form-control" id="numb" required> <br>
+
+                <label for="">Cough: </label>
+                <input type="radio" class="rad" name="cough" value="yes">Yes
+                <input type="radio" class="rad" name="cough" value="no" >No <br>
+
+                <label for="">Runny/Stuffy Nose: </label>
+                <select name="" id="rny"class="form-control">
+                    <option value="#">Select Option</option>
+                    <option value="2">Yes+</option>
+                    <option value="3">Yes+++</option>
+                    <option value="4">Somethime +/-</option>
+                </select> <br>
+
+                <label for="">Sneezing: </label>
+                <select name="" id="szn" class="form-control">
+                    <option value="#">Select Option</option>
+                    <option value="2">Yes++</option>
+                    <option value="3">Yes+++</option>
+                    <option value="4">Somethime +/-</option>
+                </select> <br>
+
+                <label for="">Headache: </label>
+                <select name="" id="hda" class="form-control">
+                    <option value="#">Select Option</option>
+                    <option value="2">Yes+</option>
+                    <option value="3">Yes++</option>
+                    <option value="4">Yes+++</option>
+                </select> <br>
+
+                <label for="">fatigue:</label>
+                <input type="radio" name="fatigue" class="rad" value="yes" >Yes+++ 
+                <input type="radio" name="fatigue" class="rad" value="no" >Sometimes +/- <br>
+                
+
+                <label for="">Diffuculty Breathing : <p>(mederate to severe cases accounting for abot 20% of infected.)</p> </label>
+                <input type="radio" name="breath" class="rad" value="yes"> Yes
+                <input type="radio" name="breath" class="rad" value="no" >No <br>
+
+                
+                <center>
+                    <input type="button" id="btn" value="check" onclick="myFunction()"> <br> <br>
+                </center>
+
+               
+                <div class="res">
+                    <p id="demo"></p>
+                    <p id="demo2"></p>
+                    
+                </div>
+                <p id="nb">NB: COVID-19 is danger when Fever (99.4 - 104.0), Stuffy Nose:(Sometimes), Snezzing:(Sometimes),
+                    Headache:(YES++), Fatigue:(YES+++), Breathing:(Yes). </p>
+                
+                
+            </form>
+        </div>
+        <div class="col-sm-7" id="body_part2">
+            <img src="images/ck.png" alt="">
+        </div>
+    
+    </div>
+<!--END MAIN BODY-->
+    <footer>
+        <div class="container" id="footer_container">
+            <div class="row">
+                <div class="col-sm-12" id="f_part1">
+                    <center>
+                        <h3>COVID-19</h3> <hr>
+                    <p>The site have developed a smart way for get information of Covid-19.</p>
+                    </center>
+                    
+                </div>
+            </div>
+        </div> <!----END OF DIV CONATINER-->
+    </footer>
+    <footer id="f_2">
+        <div class="container" id="copyright">
+            <p id="copy">copyright@soumitra</p>
+        </div>
+    </footer>
+</body>
+    <script>
+        function myFunction(){
+            var nm,coug,sn,sz,hd,ft,db,res;
+
+            nm=document.getElementById('numb').value;
+            coug=fr.cough.value;
+            sn=document.getElementById('rny').value;
+            sz=document.getElementById('szn').value;
+            hd=document.getElementById('hda').value;
+            ft=fr.fatigue.value;
+            bd=fr.breath.value;
+
+            if(isNaN(nm) || nm >99.4  && nm < 104.4 && coug=='yes' && sn=='4' && sz=='4' && hd=='4'&& ft=='yes' && bd=='yes'){
+                // alart('denger');
+                document.getElementById('demo2').innerHTML='Danger ! You must should to check COVID-19 test';
+            }
+            else if(isNaN(nm) || nm >90  && nm <= 99.3 && coug=='no' && sn=='2' && sz=='2' && hd=='2'&& ft=='no' && bd=='no'){
+                document.getElementById('demo').innerHTML='Greatfully you safe from COVID-19 ';
+            }
+            else if(isNaN(nm) || nm >90  && nm <= 99.3 && coug=='no' && bd=='no'){
+                document.getElementById('demo').innerHTML='You safe from COVID-19 ';
+            }
+            else if(isNaN(nm) || nm >99.4  && nm < 104.4 && coug=='yes' || sn=='4' || sz=='4' || hd=='4'|| ft=='yes'){
+                 document.getElementById('demo2').innerHTML='You should to check COVID-19 test';
+            }
+            else if(nm<30 ||nm >106 && coug==' ' || sn=='4' || sz=='4' || hd=='4'|| ft=='yes' ||bd=='yes'){
+                document.getElementById('demo2').innerHTML='Invalid Input';
+            }
+            else{
+                document.getElementById('demo2').innerHTML='Invalid Input';
+            }
+            
+
+
+        }
+    </script>
+
+</html>
